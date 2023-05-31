@@ -12,9 +12,7 @@
     "husky": "yarn lint:check && yarn format"
   },
   "lint-staged": {
-    "src/**/*.{js,ts}": [
-      "yarn husky"
-    ]
+    "src/**/*.{js,ts}": "yarn husky"
   },
   "author": "omar faruk",
   "license": "ISC",
