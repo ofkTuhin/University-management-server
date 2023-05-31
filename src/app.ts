@@ -1,11 +1,11 @@
 import cors from 'cors'
-import express, { Application, Request, Response } from 'express'
+import express, { Application, Request } from 'express'
 const app: Application = express()
 // middle ware
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.get('/', (req: Request, res: Response) => {
+app.get('/', (req: Request, res: any) => {
   res.send('Hello World!')
 })
 
