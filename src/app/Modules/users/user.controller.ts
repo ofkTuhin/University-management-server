@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import { createUser } from './user.service'
 
-export const createaUserController = async (req: Request, res: Response) => {
+const createaUserController = async (req: Request, res: Response) => {
   const userData = req.body
   try {
     await createUser(userData)
@@ -13,4 +13,8 @@ export const createaUserController = async (req: Request, res: Response) => {
       message: error,
     })
   }
+}
+
+export default {
+  createaUserController,
 }

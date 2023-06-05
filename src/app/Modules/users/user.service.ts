@@ -8,10 +8,11 @@ export const createUser = async (
 ): Promise<UserSchema | null> => {
   const id = await generateUserId()
   user.id = id
-  const createdUser = await User.create(user)
+
   if (!user.password) {
     user.password = config.default_user_password as string
   }
+  const createdUser = await User.create(user)
   if (!createdUser) {
     throw Error('Failed to create user')
   } else {
