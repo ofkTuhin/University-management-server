@@ -45,8 +45,6 @@ const errorlog = createLogger({
   ),
   defaultMeta: { service: 'user-service' },
   transports: [
-    // eslint-disable-next-line no-undef
-
     new DailyRotateFile({
       filename: path.join(process.cwd(), 'logs', 'ums-error-%DATE%.log'),
       datePattern: 'YYYY-MM-DD-HH',
