@@ -1,15 +1,35 @@
 {
-  "keep": {
-    "days": true,
-    "amount": 14
-  },
-  "auditLog": "D:\\level-2\\project\\university-management-server\\logs\\.110657f46076567ddbe5bbac2bd8b37f68b32e90-audit.json",
-  "files": [
-    {
-      "date": 1686102718900,
-      "name": "D:\\level-2\\project\\university-management-server\\logs\\ums-success-2023-06-07-07.log",
-      "hash": "4a224d56132577018f9b64e2534ea66dcc47345a75cedd04fdb1ef911fb7110b"
-    }
-  ],
-  "hashType": "sha256"
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\level-2\\project\\university-management-server\\logs\\.110657f46076567ddbe5bbac2bd8b37f68b32e90-audit.json",
+    "files": [
+        {
+            "date": 1686102718900,
+            "name": "D:\\level-2\\project\\university-management-server\\logs\\ums-success-2023-06-07-07.log",
+            "hash": "4a224d56132577018f9b64e2534ea66dcc47345a75cedd04fdb1ef911fb7110b"
+        },
+        {
+            "date": 1686186546509,
+            "name": "D:\\level-2\\project\\university-management-server\\logs\\ums-success-2023-06-08-07.log",
+            "hash": "5cf13ce9804226cf5e938f28627e5d45cf4a85caa6a7af184374e65271831c01"
+        },
+        {
+            "date": 1686189653678,
+            "name": "D:\\level-2\\project\\university-management-server\\logs\\ums-success-2023-06-08-08.log",
+            "hash": "5953ca3cc975101cd6e6614d5c521f12e7088b923883b2f7535d47464cf88a57"
+        },
+        {
+            "date": 1686280406283,
+            "name": "D:\\level-2\\project\\university-management-server\\logs\\ums-success-2023-06-09-09.log",
+            "hash": "5602285e278ea6b8a227a0be04efac4d32a6c9e74c590a370a76a573b85bbfd4"
+        },
+        {
+            "date": 1686283216298,
+            "name": "D:\\level-2\\project\\university-management-server\\logs\\ums-success-2023-06-09-10.log",
+            "hash": "d6c95eee8a877a87144fe8d3fb892a81e16b47405809a168f995da8193c87ccd"
+        }
+    ],
+    "hashType": "sha256"
 }
