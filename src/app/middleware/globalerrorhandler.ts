@@ -15,18 +15,18 @@ export const globalErrorhandler: ErrorRequestHandler = (
 ) => {
   let statuscode = 500
   let message = 'something went wrong'
-  let errormessage: GenericErrorMessage[] = []
+  let errormessages: GenericErrorMessage[] = []
   config.env !== 'production'
     ? console.log(error)
     : logger.errorlog.error(error)
   if (error.name === 'ValidationError') {
     const siplifiedErrors = handleValidationErrors(error)
     statuscode = siplifiedErrors.statusCode
-    errormessage = siplifiedErrors.errormessage
+    errormessages = siplifiedErrors.errormessages
     message = siplifiedErrors.message
   } else if (error instanceof Error) {
     message = error.message
-    errormessage = error?.message
+    errormessages = error?.message
       ? [
           {
             path: '',
@@ -37,7 +37,7 @@ export const globalErrorhandler: ErrorRequestHandler = (
   } else if (error instanceof ApiError) {
     statuscode = error?.statusCode
     message = error.message
-    errormessage = error?.message
+    errormessages = error?.message
       ? [
           {
             path: '',
@@ -50,7 +50,7 @@ export const globalErrorhandler: ErrorRequestHandler = (
   res.status(statuscode).json({
     success: false,
     message,
-    errormessage,
+    errormessages,
     stack: config.env !== 'production' ? error.stack : undefined,
   })
   next()

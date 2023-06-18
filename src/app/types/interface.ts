@@ -1,10 +1,10 @@
 export type GenericErrorMessage = {
   message: string
-  path: string
+  path: string | number
 }
 
 export type GenericErrorResponse = {
   statusCode: number
   message: string
-  errormessage: GenericErrorMessage[]
+  errormessages: GenericErrorMessage[]
 }
