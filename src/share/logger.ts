@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import path from 'path'
 import { createLogger, format, transports } from 'winston'
 import DailyRotateFile from 'winston-daily-rotate-file'
@@ -22,10 +21,13 @@ const successlog = createLogger({
   ),
   defaultMeta: { service: 'user-service' },
   transports: [
-    // eslint-disable-next-line no-undef
-
     new DailyRotateFile({
-      filename: path.join(process.cwd(), 'logs', 'ums-success-%DATE%.log'),
+      filename: path.join(
+        process.cwd(),
+        'logs',
+        'success',
+        'ums-success-%DATE%.log'
+      ),
       datePattern: 'YYYY-MM-DD-HH',
       zippedArchive: true,
       maxSize: '20m',
@@ -46,7 +48,12 @@ const errorlog = createLogger({
   defaultMeta: { service: 'user-service' },
   transports: [
     new DailyRotateFile({
-      filename: path.join(process.cwd(), 'logs', 'ums-error-%DATE%.log'),
+      filename: path.join(
+        process.cwd(),
+        'logs',
+        'error',
+        'ums-error-%DATE%.log'
+      ),
       datePattern: 'YYYY-MM-DD-HH',
       zippedArchive: true,
       maxSize: '20m',
