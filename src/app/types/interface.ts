@@ -8,3 +8,11 @@ export type GenericErrorResponse = {
   message: string
   errormessages: GenericErrorMessage[]
 }
+
+export type IPagination = {
+  limit: number
+  page: number
+
+  sortBy: string
+  sortOrder: string
+}
