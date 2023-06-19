@@ -10,4 +10,4 @@ router.post(
   userController.createaUserController
 )
 
-export default router
+export const userRouter = router
