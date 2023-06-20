@@ -1,3 +1,5 @@
+import { SortOrder } from 'mongoose'
+
 export type GenericErrorMessage = {
   message: string
   path: string | number
@@ -10,9 +12,8 @@ export type GenericErrorResponse = {
 }
 
 export type IPagination = {
-  limit: number
   page: number
-
+  limit: number
   sortBy: string
-  sortOrder: string
+  sortOrder: SortOrder
 }
