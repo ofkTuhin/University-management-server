@@ -18,7 +18,7 @@ export const handleValidationErrors = (
   const statusCode = 500
   return {
     message: 'Validation Error',
-    errormessage: errors,
+    errormessages: errors,
     statusCode: statusCode,
   }
 }

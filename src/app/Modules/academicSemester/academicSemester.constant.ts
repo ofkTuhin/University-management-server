@@ -30,3 +30,11 @@ export const academicSemesterTitleCode: { [key: string]: string } = {
   Summer: '02',
   Fall: '03',
 }
+
+export const searchField: string[] = [
+  'title',
+  'code',
+  'year',
+  'startMonth',
+  'endMonth',
+]

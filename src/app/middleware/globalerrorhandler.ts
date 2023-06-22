@@ -3,6 +3,7 @@
 import { ErrorRequestHandler } from 'express'
 import config from '../../config'
 import ApiError from '../../errors/ApiError'
+import handleCastError from '../../errors/handleCastError'
 import { handleValidationErrors } from '../../errors/handlevalidationError'
 import logger from '../../share/logger'
 import { GenericErrorMessage } from '../types/interface'
@@ -34,6 +35,11 @@ export const globalErrorhandler: ErrorRequestHandler = (
           },
         ]
       : []
+  } else if (error.name === 'CastError') {
+    const simplifiedError = handleCastError(error)
+    statuscode = simplifiedError.statusCode
+    message = simplifiedError.message
+    errormessages = simplifiedError.errorMessages
   } else if (error instanceof ApiError) {
     statuscode = error?.statusCode
     message = error.message

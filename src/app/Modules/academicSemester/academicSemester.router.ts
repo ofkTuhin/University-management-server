@@ -4,7 +4,7 @@ import zodValidationHandler from '../../middleware/zodValidationHandler'
 import { academicSemesterController } from './academicSemester.controller'
 import { AcademicSemesterZodValidation } from './academicSemester.validation'
 const router = express.Router()
-
+// create semester
 router.post(
   '/create-semester',
   zodValidationHandler(
@@ -12,5 +12,8 @@ router.post(
   ),
   academicSemesterController.createaSemester
 )
+// get all semester
 router.get('/all-semesters', academicSemesterController.getAllSemesters)
+// get single semester
+router.get('/single-semester/:id', academicSemesterController.getSingleSemester)
 export const semesterRouter = router
