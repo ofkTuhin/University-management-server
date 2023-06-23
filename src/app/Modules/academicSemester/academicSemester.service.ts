@@ -44,15 +44,15 @@ const getAllSemesters = async (
     sortBy,
     sortOrder,
   } = paginationHelpers.calculatePagination(paginationoptions)
-  const { searchTerm, ...filtesData } = filters
+  const { searchTerm, ...filtersData } = filters
   // search condition
 
-  const andconditon = []
+  const andConditions = []
 
   if (searchTerm) {
-    andconditon.push({
-      $or: searchField.map(item => ({
-        [item]: {
+    andConditions.push({
+      $or: searchField.map(field => ({
+        [field]: {
           $regex: searchTerm,
           $options: 'i',
         },
@@ -60,20 +60,22 @@ const getAllSemesters = async (
     })
   }
 
-  if (Object.keys(filtesData).length > 0) {
-    andconditon.push({
-      $and: Object.entries(filtesData).map(([key, value]) => ({
-        [key]: value,
+  if (Object.keys(filtersData).length) {
+    andConditions.push({
+      $and: Object.entries(filtersData).map(([field, value]) => ({
+        [field]: value,
       })),
     })
   }
+
   const sortConditions: { [key: string]: SortOrder } = {}
   if (sortBy && sortOrder) {
     sortConditions[sortBy] = sortOrder
   }
   // all conditions
-  const whereConditions = andconditon.length > 0 ? { $and: andconditon } : {}
-  const result = await AcademicSemester.find({ whereConditions })
+  const whereConditions =
+    andConditions.length > 0 ? { $and: andConditions } : {}
+  const result = await AcademicSemester.find(whereConditions)
     .sort(sortConditions)
     .skip(skip)
     .limit(limit)
@@ -112,9 +114,18 @@ const updateSemester = async (
   })
   return result
 }
+
+// delete semester
+const deleteSemester = async (
+  id: string
+): Promise<IAcademicSemester | null> => {
+  const result = await AcademicSemester.findByIdAndDelete(id)
+  return result
+}
 export const AcademicSemesterService = {
   createAcademicSemester,
   getAllSemesters,
   getSingleSemester,
   updateSemester,
+  deleteSemester,
 }

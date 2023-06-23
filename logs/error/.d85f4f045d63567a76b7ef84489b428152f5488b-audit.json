@@ -64,6 +64,26 @@
             "date": 1687449600706,
             "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-06-22-22.log",
             "hash": "15c582552be749002b649c15764e2f52582552cb0a666ef9e12faa0c81fca2a1"
+        },
+        {
+            "date": 1687495686867,
+            "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-06-23-10.log",
+            "hash": "17e4e037640b616fcb7958c8fb8b6de782cecde816825236b93b7f3c48e66a75"
+        },
+        {
+            "date": 1687496628819,
+            "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-06-23-11.log",
+            "hash": "170dba88c388a5e73e40024b24ce1ea891d9a0b05ccc8b0cea86e53b990558a9"
+        },
+        {
+            "date": 1687511721504,
+            "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-06-23-15.log",
+            "hash": "faa91351e557c054ec30143e0cd3d2ec60c2d4b03c6dc80d9eea5b73cdb0aab0"
+        },
+        {
+            "date": 1687514702218,
+            "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-06-23-16.log",
+            "hash": "2d000b9a5784507c245b8785ad37d30db3f5b9ad0ebe0798abb028740bf07f24"
         }
     ],
     "hashType": "sha256"

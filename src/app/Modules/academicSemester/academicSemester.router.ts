@@ -27,4 +27,7 @@ router.patch(
   ),
   academicSemesterController.updateSemester
 )
+
+// delete semester
+router.delete('/delete-semester/:id', academicSemesterController.deleteSemester)
 export const semesterRouter = router

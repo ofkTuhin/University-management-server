@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const pick = <T extends Record<string, unknown>, k extends keyof T>(
   obj: T,
   keys: k[]
@@ -8,6 +9,7 @@ const pick = <T extends Record<string, unknown>, k extends keyof T>(
       findObject[key] = obj[key]
     }
   }
+
   return findObject
 }
 
