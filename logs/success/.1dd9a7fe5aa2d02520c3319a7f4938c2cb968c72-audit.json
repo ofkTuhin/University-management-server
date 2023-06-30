@@ -89,6 +89,11 @@
             "date": 1687514702212,
             "name": "D:\\level-2\\project\\university-management-server\\logs\\success\\ums-success-2023-06-23-16.log",
             "hash": "2545ad413206372c2b549209260ab9e90c07714fc47b32e9fc7ee4c52165d509"
+        },
+        {
+            "date": 1687709689449,
+            "name": "D:\\level-2\\project\\university-management-server\\logs\\success\\ums-success-2023-06-25-22.log",
+            "hash": "64147c0ea72bd7fc8fd8bdd937dd9b28603de4e83ba781f49a3346b3728b3601"
         }
     ],
     "hashType": "sha256"

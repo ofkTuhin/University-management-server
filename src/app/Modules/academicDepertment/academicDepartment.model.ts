@@ -1,11 +1,11 @@
 import { Schema, model } from 'mongoose'
 
 import {
-  IAcademicDepertment,
-  IAcademicDepertmentModel,
-} from './academicDepertment.interface'
+  IAcademicDepartment,
+  IAcademicDepartmentModel,
+} from './academicDepartment.interface'
 
-const academicDepertmentSchema = new Schema<IAcademicDepertment>(
+const academicDepartmentSchema = new Schema<IAcademicDepartment>(
   {
     title: {
       type: String,
@@ -26,7 +26,7 @@ const academicDepertmentSchema = new Schema<IAcademicDepertment>(
   }
 )
 
-export const AcademicDepertment = model<
-  IAcademicDepertment,
-  IAcademicDepertmentModel
->('AcademicDepertment', academicDepertmentSchema)
+export const AcademicDepartment = model<
+  IAcademicDepartment,
+  IAcademicDepartmentModel
+>('AcademicDepartment', academicDepartmentSchema)

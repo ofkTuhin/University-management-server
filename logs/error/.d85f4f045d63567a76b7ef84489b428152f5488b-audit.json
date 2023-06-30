@@ -84,6 +84,11 @@
             "date": 1687514702218,
             "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-06-23-16.log",
             "hash": "2d000b9a5784507c245b8785ad37d30db3f5b9ad0ebe0798abb028740bf07f24"
+        },
+        {
+            "date": 1687709689482,
+            "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-06-25-22.log",
+            "hash": "d5648da96abd5eef32f8e0990f5d23a0969c7b2b4b81b92358e82892ea930092"
         }
     ],
     "hashType": "sha256"

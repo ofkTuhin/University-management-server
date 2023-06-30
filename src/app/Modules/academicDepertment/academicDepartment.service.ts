@@ -3,20 +3,20 @@ import { SortOrder } from 'mongoose'
 import { paginationHelpers } from '../../../helper/paginationHelper'
 import { IPagination } from '../../types/interface'
 
-import { searchField } from './academicDepertment.constant'
+import { searchField } from './academicDepartment.constant'
 import {
-  IAcademicDepertment,
-  IAcademicDepertmentFilter,
-} from './academicDepertment.interface'
-import { AcademicDepertment } from './academicDepertment.model'
-const createAcademicDepertment = async (
-  payload: IAcademicDepertment
-): Promise<IAcademicDepertment | null> => {
-  const result = await AcademicDepertment.create(payload)
+  IAcademicDepartment,
+  IAcademicDepartmentFilter,
+} from './academicDepartment.interface'
+import { AcademicDepartment } from './academicDepartment.model'
+const createAcademicDepartment = async (
+  payload: IAcademicDepartment
+): Promise<IAcademicDepartment | null> => {
+  const result = await AcademicDepartment.create(payload)
 
   return result
 }
-// get all Depertments
+// get all Departments
 
 type IGenericResponse<T> = {
   meta: {
@@ -26,10 +26,10 @@ type IGenericResponse<T> = {
   }
   data: T
 }
-const getAllDepertments = async (
+const getAllDepartments = async (
   paginationoptions: Partial<IPagination>,
-  filters: IAcademicDepertmentFilter
-): Promise<IGenericResponse<IAcademicDepertment[]>> => {
+  filters: IAcademicDepartmentFilter
+): Promise<IGenericResponse<IAcademicDepartment[]>> => {
   const {
     page = 1,
     limit = 10,
@@ -67,12 +67,12 @@ const getAllDepertments = async (
   }
   // all conditions
   const whereConditions = andconditon.length > 0 ? { $and: andconditon } : {}
-  const result = await AcademicDepertment.find(whereConditions)
+  const result = await AcademicDepartment.find(whereConditions)
     .populate('academicFaculties')
     .sort(sortConditions)
     .skip(skip)
     .limit(limit)
-  const total = await AcademicDepertment.countDocuments()
+  const total = await AcademicDepartment.countDocuments()
   return {
     meta: {
       page,
@@ -84,18 +84,18 @@ const getAllDepertments = async (
 }
 
 // get single semster
-const getSingleDepertment = async (
+const getSingleDepartment = async (
   id: string
-): Promise<IAcademicDepertment | null> => {
-  const result = await AcademicDepertment.findById(id)
+): Promise<IAcademicDepartment | null> => {
+  const result = await AcademicDepartment.findById(id)
   return result
 }
-// update Depertment
-const updateDepertment = async (
+// update Department
+const updateDepartment = async (
   id: string,
-  payload: Partial<IAcademicDepertment>
-): Promise<IAcademicDepertment | null> => {
-  const result = await AcademicDepertment.findOneAndUpdate(
+  payload: Partial<IAcademicDepartment>
+): Promise<IAcademicDepartment | null> => {
+  const result = await AcademicDepartment.findOneAndUpdate(
     { _id: id },
     payload,
     {
@@ -108,15 +108,15 @@ const updateDepertment = async (
 // delete faculty
 const deleteByIdFromDB = async (
   id: string
-): Promise<IAcademicDepertment | null> => {
-  const result = await AcademicDepertment.findByIdAndDelete(id)
+): Promise<IAcademicDepartment | null> => {
+  const result = await AcademicDepartment.findByIdAndDelete(id)
   return result
 }
 
-export const AcademicDepertmentService = {
-  createAcademicDepertment,
-  getAllDepertments,
-  getSingleDepertment,
-  updateDepertment,
+export const AcademicDepartmentService = {
+  createAcademicDepartment,
+  getAllDepartments,
+  getSingleDepartment,
+  updateDepartment,
   deleteByIdFromDB,
 }

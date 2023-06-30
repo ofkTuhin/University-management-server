@@ -1,12 +1,12 @@
 import express from 'express'
 import zodValidationHandler from '../../middleware/zodValidationHandler'
-import userController from './user.controller'
-import { useZodValiadion } from './user.validation'
+import userController from './student.controller'
+import { StudentValidaion } from './student.validation'
 const router = express.Router()
 
 router.post(
-  '/create-student',
-  zodValidationHandler(useZodValiadion.createUserZodSchema),
+  '/create-user',
+  zodValidationHandler(StudentValidaion),
   userController.createaUserController
 )
 
