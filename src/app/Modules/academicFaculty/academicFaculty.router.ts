@@ -29,4 +29,4 @@ router.patch(
 )
 // delete faculty
 router.delete('/delete-faculty/:id', academicFacultyController.deleteFaculty)
-export const facultyRouter = router
+export const academicFacultyRouter = router

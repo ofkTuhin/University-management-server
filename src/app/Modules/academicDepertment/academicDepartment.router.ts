@@ -6,7 +6,7 @@ import { AcademicDepartmentZodValidation } from './academicDepartment.validation
 const router = express.Router()
 // create Department
 router.post(
-  '/create-Department',
+  '/create-department',
   zodValidationHandler(
     AcademicDepartmentZodValidation.createAcademicDepartmentZodValidation
   ),
@@ -14,17 +14,17 @@ router.post(
 )
 
 // get all Department
-router.get('/all-Departments', academicDepartmentController.getAllDepartments)
+router.get('/all-departments', academicDepartmentController.getAllDepartments)
 
 // get single Department
 router.get(
-  '/single-Department/:id',
+  '/single-department/:id',
   academicDepartmentController.getSingleDepartment
 )
 
 // update Department
 router.patch(
-  '/update-Department/:id',
+  '/update-department/:id',
   zodValidationHandler(
     AcademicDepartmentZodValidation.updateAcademicDepartmentZodValidation
   ),
@@ -32,7 +32,7 @@ router.patch(
 )
 // delete Department
 router.delete(
-  '/delete-Department/:id',
+  '/delete-department/:id',
   academicDepartmentController.deleteDepartment
 )
-export const DepartmentRouter = router
+export const departmentRouter = router

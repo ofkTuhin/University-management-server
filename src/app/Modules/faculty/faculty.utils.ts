@@ -1,5 +1,5 @@
 import { IAcademicSemester } from '../academicSemester/academicSemester.interface'
-import { User } from './user.model'
+import { User } from './student.model'
 
 export const findLastStudentId = async () => {
   const lastStudent = await User.findOne({ role: 'student' }, { id: 1, _id: 0 })
@@ -32,7 +32,7 @@ export const findLastFacultyId = async () => {
     })
     .lean()
 
-  return lastFaculty?.id ? lastFaculty?.id.substring(2) : undefined
+  return lastFaculty?.id
 }
 
 export const generateFacultyId = async (): Promise<string | undefined> => {

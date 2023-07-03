@@ -9,5 +9,9 @@ router.post(
   zodValidationHandler(useZodValiadion.createUserZodSchema),
   userController.createaUserController
 )
-
+router.post(
+  '/create-faculty',
+  zodValidationHandler(useZodValiadion.createFacultyZodSchema),
+  userController.createaFacultyController
+)
 export const userRouter = router

@@ -2,7 +2,6 @@ import { Model, Types } from 'mongoose'
 
 import { IAcademicDepartment } from '../academicDepertment/academicDepartment.interface'
 import { IAcademicFaculty } from '../academicFaculty/academicFaculty.interface'
-import { IAcademicSemester } from '../academicSemester/academicSemester.interface'
 
 export type UserName = {
   firstName: string
@@ -10,24 +9,7 @@ export type UserName = {
   middleName: string
 }
 
-export type Guardian = {
-  fatherName: string
-  fatherOccupation: string
-  fatherContactNo: string
-  motherName: string
-  motherOccupation: string
-  motherContactNo: string
-  address: string
-}
-
-export type LocalGuardian = {
-  name: string
-  occupation: string
-  contactNo: string
-  address: string
-}
-
-export type IStudent = {
+export type IFaculty = {
   id: string
   name: UserName //embedded object
   gender: 'male' | 'female'
@@ -38,17 +20,15 @@ export type IStudent = {
   bloodGroup?: 'A+' | 'A-' | 'B+' | 'B-' | 'AB+' | 'AB-' | 'O+' | 'O-'
   presentAddress: string
   permanentAddress: string
-  guardian: Guardian // embedded object
-  localGuardian: LocalGuardian // embedded object
   academicFaculty: Types.ObjectId | IAcademicFaculty // reference _id
   academicDepartment: Types.ObjectId | IAcademicDepartment // // reference _id
-  academicSemester: Types.ObjectId | IAcademicSemester // reference _id
+  designation: string
   profileImage?: string
 }
 
-export type IStudentModel = Model<IStudent>
+export type IFacultyModel = Model<IFaculty>
 
-export type IStudentFilters = {
+export type IFacultyFilters = {
   searchTerm?: string
   id?: string
   bloodGroup?: string

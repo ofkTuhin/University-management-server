@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { Request, Response } from 'express'
 import httpStatus from 'http-status'
 import { paginationField } from '../../../constants/pagination'
@@ -9,6 +10,7 @@ import { AcademicDepartmentService } from './academicDepartment.service'
 
 const createaDepartment = catchAsync(async (req: Request, res: Response) => {
   const { ...acdemicDepartmentData } = req.body
+  console.log(req.body)
   const academicDepartment =
     await AcademicDepartmentService.createAcademicDepartment(
       acdemicDepartmentData

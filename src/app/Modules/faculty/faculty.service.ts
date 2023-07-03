@@ -5,11 +5,11 @@ import ApiError from '../../../errors/ApiError'
 import { paginationHelpers } from '../../../helper/paginationHelper'
 import { IPagination } from '../../types/interface'
 import { User } from '../users/user.model'
-import { studentSearchableFields } from './student.constant'
-import { IStudent, IStudentFilters } from './student.interface'
-import { Student } from './student.model'
+import { facultySearchableFields } from './faculty.constant'
+import { IFaculty, IFacultyFilters } from './faculty.interface'
+import { Faculty } from './faculty.model'
 
-// get all students
+// get all facultys
 
 type IGenericResponse<T> = {
   meta: {
@@ -19,10 +19,10 @@ type IGenericResponse<T> = {
   }
   data: T
 }
-const getAllStudents = async (
+const getAllFacultys = async (
   paginationoptions: Partial<IPagination>,
-  filters: IStudentFilters
-): Promise<IGenericResponse<IStudent[]>> => {
+  filters: IFacultyFilters
+): Promise<IGenericResponse<IFaculty[]>> => {
   const {
     page = 1,
     limit = 10,
@@ -37,7 +37,7 @@ const getAllStudents = async (
 
   if (searchTerm) {
     andConditions.push({
-      $or: studentSearchableFields.map(field => ({
+      $or: facultySearchableFields.map(field => ({
         [field]: {
           $regex: searchTerm,
           $options: 'i',
@@ -61,14 +61,14 @@ const getAllStudents = async (
   // all conditions
   const whereConditions =
     andConditions.length > 0 ? { $and: andConditions } : {}
-  const result = await Student.find(whereConditions)
+  const result = await Faculty.find(whereConditions)
     .populate('academicSemester')
     .populate('academicDepartment')
     .populate('academicFaculty')
     .sort(sortConditions)
     .skip(skip)
     .limit(limit)
-  const total = await Student.countDocuments()
+  const total = await Faculty.countDocuments()
   return {
     meta: {
       page,
@@ -80,65 +80,48 @@ const getAllStudents = async (
 }
 
 // get single semster
-const getSingleStudent = async (id: string): Promise<IStudent | null> => {
-  const result = await Student.findOne({ id })
+const getSingleFaculty = async (id: string): Promise<IFaculty | null> => {
+  const result = await Faculty.findOne({ id })
   return result
 }
 // update student
-const updateStudent = async (
+const updateFaculty = async (
   id: string,
-  payload: Partial<IStudent>
-): Promise<IStudent | null> => {
-  const existStudent = await Student.findOne({ id: id })
-  console.log(existStudent, 'exist')
-  if (!existStudent) {
-    throw new ApiError(httpStatus.BAD_REQUEST, 'Student not found')
+  payload: Partial<IFaculty>
+): Promise<IFaculty | null> => {
+  const existFaculty = await Faculty.findOne({ id: id })
+
+  if (!existFaculty) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Faculty not found')
   }
-  const { name, localGuardian, guardian, ...studentData } = payload
-  const updateStudentData: Partial<IStudent> = {
+  const { name, ...studentData } = payload
+  const updateFacultyData: Partial<IFaculty> = {
     ...studentData,
   }
   if (name && Object.keys(name).length) {
     Object.keys(name).forEach(key => {
-      const nameKey = `name.${key}` as keyof Partial<IStudent>
-      ;(updateStudentData as any)[nameKey] = name[key as keyof typeof name]
-    })
-  }
-  // local guardian
-  if (guardian && Object.keys(guardian).length) {
-    Object.keys(guardian).forEach(key => {
-      const guardianKey = `guardian.${key}` as keyof Partial<IStudent>
-      ;(updateStudentData as any)[guardianKey] =
-        guardian[key as keyof typeof guardian]
+      const nameKey = `name.${key}` as keyof Partial<IFaculty>
+      ;(updateFacultyData as any)[nameKey] = name[key as keyof typeof name]
     })
   }
 
-  // guardian
-  // local guardian
-  if (localGuardian && Object.keys(localGuardian).length) {
-    Object.keys(localGuardian).forEach(key => {
-      const localGuardianKey = `localGuardian.${key}` as keyof Partial<IStudent>
-      ;(updateStudentData as any)[localGuardianKey] =
-        localGuardian[key as keyof typeof localGuardian]
-    })
-  }
-  const result = await Student.findOneAndUpdate({ id }, updateStudentData, {
+  const result = await Faculty.findOneAndUpdate({ id }, updateFacultyData, {
     new: true,
   })
   return result
 }
 
 // delete student
-const deleteStudent = async (id: string): Promise<IStudent | null> => {
-  const existStudent = Student.findOne({ id })
-  if (!existStudent) {
-    throw new ApiError(httpStatus.NOT_FOUND, 'Student not found')
+const deleteFaculty = async (id: string): Promise<IFaculty | null> => {
+  const existFaculty = Faculty.findOne({ id })
+  if (!existFaculty) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'Faculty not found')
   }
 
   const session = await mongoose.startSession()
   try {
     session.startTransaction()
-    const student = await Student.findOneAndDelete({ id })
+    const student = await Faculty.findOneAndDelete({ id })
     if (!student) {
       throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to delete student')
     }
@@ -151,9 +134,9 @@ const deleteStudent = async (id: string): Promise<IStudent | null> => {
     throw error
   }
 }
-export const StudentService = {
-  getAllStudents,
-  getSingleStudent,
-  updateStudent,
-  deleteStudent,
+export const FacultyService = {
+  getAllFacultys,
+  getSingleFaculty,
+  updateFaculty,
+  deleteFaculty,
 }
