@@ -9,6 +9,5 @@ export default {
   default_student_password: process.env.DEFAULT_STUDENT_PASS,
   default_faculty_password: process.env.DEFAULT_FACULTY_PASS,
   default_admin_password: process.env.DEFAULT_ADMIN_PASS,
-
   env: process.env.NODE_ENV,
 }

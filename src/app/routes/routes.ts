@@ -1,5 +1,4 @@
 import express from 'express'
-
 import { departmentRouter } from '../Modules/academicDepertment/academicDepartment.router'
 import { academicFacultyRouter } from '../Modules/academicFaculty/academicFaculty.router'
 import { semesterRouter } from '../Modules/academicSemester/academicSemester.router'

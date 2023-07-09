@@ -14,7 +14,7 @@ const createaUserController = catchAsync(
       message: 'user created successfully',
       result: user,
     })
-  }
+  },
 )
 const createaFacultyController = catchAsync(
   async (req: Request, res: Response) => {
@@ -26,10 +26,23 @@ const createaFacultyController = catchAsync(
       message: 'user created successfully',
       result: user,
     })
-  }
+  },
 )
+// admin controller
+const createaAdminController = catchAsync(
+  async (req: Request, res: Response) => {
+    const { admin, ...userData } = req.body
 
+    const user = await UserService.createAdmin(userData, admin)
+    sendResponse(res, {
+      success: true,
+      message: 'user created successfully',
+      result: user,
+    })
+  },
+)
 export default {
   createaUserController,
   createaFacultyController,
+  createaAdminController,
 }

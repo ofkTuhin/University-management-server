@@ -7,11 +7,16 @@ const router = express.Router()
 router.post(
   '/create-student',
   zodValidationHandler(useZodValiadion.createUserZodSchema),
-  userController.createaUserController
+  userController.createaUserController,
 )
 router.post(
   '/create-faculty',
   zodValidationHandler(useZodValiadion.createFacultyZodSchema),
-  userController.createaFacultyController
+  userController.createaFacultyController,
+)
+router.post(
+  '/create-admin',
+  zodValidationHandler(useZodValiadion.createAdminZodSchema),
+  userController.createaAdminController,
 )
 export const userRouter = router
