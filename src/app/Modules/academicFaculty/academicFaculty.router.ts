@@ -8,9 +8,9 @@ const router = express.Router()
 router.post(
   '/create-faculty',
   zodValidationHandler(
-    AcademicFacultyZodValidation.createAcademicFacultyZodValidation
+    AcademicFacultyZodValidation.createAcademicFacultyZodValidation,
   ),
-  academicFacultyController.createaFaculty
+  academicFacultyController.createaFaculty,
 )
 
 // get all faculty
@@ -23,9 +23,9 @@ router.get('/single-faculty/:id', academicFacultyController.getSingleFaculty)
 router.patch(
   '/update-faculty/:id',
   zodValidationHandler(
-    AcademicFacultyZodValidation.updateAcademicFacultyZodValidation
+    AcademicFacultyZodValidation.updateAcademicFacultyZodValidation,
   ),
-  academicFacultyController.updateFaculty
+  academicFacultyController.updateFaculty,
 )
 // delete faculty
 router.delete('/delete-faculty/:id', academicFacultyController.deleteFaculty)

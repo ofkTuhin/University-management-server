@@ -138,7 +138,7 @@ export const StudentSchema = new Schema<IStudent, IStudentModel>(
     toJSON: {
       virtuals: true,
     },
-  }
+  },
 )
 
 export const Student = model<IStudent, IStudentModel>('Student', StudentSchema)

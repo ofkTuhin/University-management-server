@@ -21,7 +21,7 @@ type IGenericResponse<T> = {
 }
 const getAllFacultys = async (
   paginationoptions: Partial<IPagination>,
-  filters: IFacultyFilters
+  filters: IFacultyFilters,
 ): Promise<IGenericResponse<IFaculty[]>> => {
   const {
     page = 1,
@@ -87,7 +87,7 @@ const getSingleFaculty = async (id: string): Promise<IFaculty | null> => {
 // update student
 const updateFaculty = async (
   id: string,
-  payload: Partial<IFaculty>
+  payload: Partial<IFaculty>,
 ): Promise<IFaculty | null> => {
   const existFaculty = await Faculty.findOne({ id: id })
 

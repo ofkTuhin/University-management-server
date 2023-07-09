@@ -13,7 +13,7 @@ const createaDepartment = catchAsync(async (req: Request, res: Response) => {
   console.log(req.body)
   const managementDepartment =
     await ManagementDepartmentService.createManagementDepartment(
-      acdemicDepartmentData
+      acdemicDepartmentData,
     )
 
   sendResponse<IManagementDepartment>(res, {
@@ -28,7 +28,7 @@ const getAllDepartments = catchAsync(async (req: Request, res: Response) => {
   const filters = pick(req.query, ['searchTerm', 'title'])
   const allDepartments = await ManagementDepartmentService.getAllDepartments(
     paginationoptions,
-    filters
+    filters,
   )
 
   sendResponse<IManagementDepartment[]>(res, {
@@ -58,7 +58,7 @@ const updateDepartment = catchAsync(async (req: Request, res: Response) => {
   const updatedData = req.body
   const result = await ManagementDepartmentService.updateDepartment(
     id,
-    updatedData
+    updatedData,
   )
 
   sendResponse<IManagementDepartment>(res, {

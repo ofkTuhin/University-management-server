@@ -8,9 +8,9 @@ const router = express.Router()
 router.post(
   '/create-semester',
   zodValidationHandler(
-    AcademicSemesterZodValidation.createAcademicSemesterZodValidation
+    AcademicSemesterZodValidation.createAcademicSemesterZodValidation,
   ),
-  academicSemesterController.createaSemester
+  academicSemesterController.createaSemester,
 )
 
 // get all semester
@@ -23,9 +23,9 @@ router.get('/single-semester/:id', academicSemesterController.getSingleSemester)
 router.patch(
   '/update-semester/:id',
   zodValidationHandler(
-    AcademicSemesterZodValidation.updateAcademicSemesterZodValidation
+    AcademicSemesterZodValidation.updateAcademicSemesterZodValidation,
   ),
-  academicSemesterController.updateSemester
+  academicSemesterController.updateSemester,
 )
 
 // delete semester

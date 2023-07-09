@@ -14,10 +14,10 @@ const academicFacultySchema = new Schema<IAcademicFaculty>(
   },
   {
     timestamps: true,
-  }
+  },
 )
 
 export const AcademicFaculty = model<IAcademicFaculty, IAcademicFacultyModel>(
   'AcademicFaculty',
-  academicFacultySchema
+  academicFacultySchema,
 )

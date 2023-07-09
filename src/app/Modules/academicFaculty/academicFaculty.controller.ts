@@ -10,7 +10,7 @@ import { AcademicFacultyService } from './academicFaculty.service'
 const createaFaculty = catchAsync(async (req: Request, res: Response) => {
   const { ...acdemicFacultyData } = req.body
   const academicFaculty = await AcademicFacultyService.createAcademicFaculty(
-    acdemicFacultyData
+    acdemicFacultyData,
   )
 
   sendResponse<IAcademicFaculty>(res, {
@@ -25,7 +25,7 @@ const getAllFacultys = catchAsync(async (req: Request, res: Response) => {
   const filters = pick(req.query, ['searchTerm', 'title'])
   const allFacultys = await AcademicFacultyService.getAllFacultys(
     paginationoptions,
-    filters
+    filters,
   )
 
   sendResponse<IAcademicFaculty[]>(res, {

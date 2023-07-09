@@ -18,7 +18,7 @@ const managementDepartmentSchema = new Schema<IManagementDepartment>(
     toJSON: {
       virtuals: true,
     },
-  }
+  },
 )
 
 export const ManagementDepartment = model<

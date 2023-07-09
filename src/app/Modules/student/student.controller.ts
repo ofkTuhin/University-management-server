@@ -14,7 +14,7 @@ const getAllStudents = catchAsync(async (req: Request, res: Response) => {
   const filters = pick(req.query, studentFilterableFields)
   const allStudents = await StudentService.getAllStudents(
     paginationoptions,
-    filters
+    filters,
   )
 
   sendResponse<IStudent[]>(res, {

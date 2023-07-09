@@ -14,7 +14,7 @@ import {
 } from './academicSemester.interface'
 import { AcademicSemester } from './academicSemester.model'
 const createAcademicSemester = async (
-  payload: IAcademicSemester
+  payload: IAcademicSemester,
 ): Promise<IAcademicSemester | null> => {
   if (academicSemesterTitleCode[payload.title] !== payload.code) {
     throw new ApiError(httpStatus.BAD_REQUEST, 'Semester already exist')
@@ -35,7 +35,7 @@ type IGenericResponse<T> = {
 }
 const getAllSemesters = async (
   paginationoptions: Partial<IPagination>,
-  filters: IAcademicSemesterFilter
+  filters: IAcademicSemesterFilter,
 ): Promise<IGenericResponse<IAcademicSemester[]>> => {
   const {
     page = 1,
@@ -92,7 +92,7 @@ const getAllSemesters = async (
 
 // get single semster
 const getSingleSemester = async (
-  id: string
+  id: string,
 ): Promise<IAcademicSemester | null> => {
   const result = await AcademicSemester.findById(id)
   return result
@@ -100,7 +100,7 @@ const getSingleSemester = async (
 // update semester
 const updateSemester = async (
   id: string,
-  payload: Partial<IAcademicSemester>
+  payload: Partial<IAcademicSemester>,
 ): Promise<IAcademicSemester | null> => {
   if (
     payload.title &&
@@ -117,7 +117,7 @@ const updateSemester = async (
 
 // delete semester
 const deleteSemester = async (
-  id: string
+  id: string,
 ): Promise<IAcademicSemester | null> => {
   const result = await AcademicSemester.findByIdAndDelete(id)
   return result

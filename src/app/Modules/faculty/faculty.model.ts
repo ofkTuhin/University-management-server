@@ -80,7 +80,7 @@ const FacultySchema = new Schema<IFaculty, IFacultyModel>(
   },
   {
     timestamps: true,
-  }
+  },
 )
 
 export const Faculty = model<IFaculty, IFacultyModel>('Faculty', FacultySchema)

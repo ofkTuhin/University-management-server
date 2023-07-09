@@ -10,7 +10,7 @@ import {
 } from './academicFaculty.interface'
 import { AcademicFaculty } from './academicFaculty.model'
 const createAcademicFaculty = async (
-  payload: IAcademicFaculty
+  payload: IAcademicFaculty,
 ): Promise<IAcademicFaculty | null> => {
   const result = await AcademicFaculty.create(payload)
 
@@ -28,7 +28,7 @@ type IGenericResponse<T> = {
 }
 const getAllFacultys = async (
   paginationoptions: Partial<IPagination>,
-  filters: IAcademicFacultyFilter
+  filters: IAcademicFacultyFilter,
 ): Promise<IGenericResponse<IAcademicFaculty[]>> => {
   const {
     page = 1,
@@ -84,7 +84,7 @@ const getAllFacultys = async (
 
 // get single semster
 const getSingleFaculty = async (
-  id: string
+  id: string,
 ): Promise<IAcademicFaculty | null> => {
   const result = await AcademicFaculty.findById(id)
   return result
@@ -92,7 +92,7 @@ const getSingleFaculty = async (
 // update Faculty
 const updateFaculty = async (
   id: string,
-  payload: Partial<IAcademicFaculty>
+  payload: Partial<IAcademicFaculty>,
 ): Promise<IAcademicFaculty | null> => {
   const result = await AcademicFaculty.findOneAndUpdate({ _id: id }, payload, {
     new: true,
@@ -102,7 +102,7 @@ const updateFaculty = async (
 
 // delete faculty
 const deleteByIdFromDB = async (
-  id: string
+  id: string,
 ): Promise<IAcademicFaculty | null> => {
   const result = await AcademicFaculty.findByIdAndDelete(id)
   return result

@@ -13,7 +13,7 @@ const createaDepartment = catchAsync(async (req: Request, res: Response) => {
   console.log(req.body)
   const academicDepartment =
     await AcademicDepartmentService.createAcademicDepartment(
-      acdemicDepartmentData
+      acdemicDepartmentData,
     )
 
   sendResponse<IAcademicDepartment>(res, {
@@ -28,7 +28,7 @@ const getAllDepartments = catchAsync(async (req: Request, res: Response) => {
   const filters = pick(req.query, ['searchTerm', 'title'])
   const allDepartments = await AcademicDepartmentService.getAllDepartments(
     paginationoptions,
-    filters
+    filters,
   )
 
   sendResponse<IAcademicDepartment[]>(res, {
@@ -58,7 +58,7 @@ const updateDepartment = catchAsync(async (req: Request, res: Response) => {
   const updatedData = req.body
   const result = await AcademicDepartmentService.updateDepartment(
     id,
-    updatedData
+    updatedData,
   )
 
   sendResponse<IAcademicDepartment>(res, {

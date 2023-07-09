@@ -12,7 +12,7 @@ export const globalErrorhandler: ErrorRequestHandler = (
   error,
   req,
   res,
-  next
+  next,
 ) => {
   let statuscode = 500
   let message = 'something went wrong'

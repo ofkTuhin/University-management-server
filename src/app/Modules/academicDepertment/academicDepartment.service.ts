@@ -10,7 +10,7 @@ import {
 } from './academicDepartment.interface'
 import { AcademicDepartment } from './academicDepartment.model'
 const createAcademicDepartment = async (
-  payload: IAcademicDepartment
+  payload: IAcademicDepartment,
 ): Promise<IAcademicDepartment | null> => {
   const result = await AcademicDepartment.create(payload)
 
@@ -28,7 +28,7 @@ type IGenericResponse<T> = {
 }
 const getAllDepartments = async (
   paginationoptions: Partial<IPagination>,
-  filters: IAcademicDepartmentFilter
+  filters: IAcademicDepartmentFilter,
 ): Promise<IGenericResponse<IAcademicDepartment[]>> => {
   const {
     page = 1,
@@ -85,7 +85,7 @@ const getAllDepartments = async (
 
 // get single semster
 const getSingleDepartment = async (
-  id: string
+  id: string,
 ): Promise<IAcademicDepartment | null> => {
   const result = await AcademicDepartment.findById(id)
   return result
@@ -93,21 +93,21 @@ const getSingleDepartment = async (
 // update Department
 const updateDepartment = async (
   id: string,
-  payload: Partial<IAcademicDepartment>
+  payload: Partial<IAcademicDepartment>,
 ): Promise<IAcademicDepartment | null> => {
   const result = await AcademicDepartment.findOneAndUpdate(
     { _id: id },
     payload,
     {
       new: true,
-    }
+    },
   )
   return result
 }
 
 // delete faculty
 const deleteByIdFromDB = async (
-  id: string
+  id: string,
 ): Promise<IAcademicDepartment | null> => {
   const result = await AcademicDepartment.findByIdAndDelete(id)
   return result

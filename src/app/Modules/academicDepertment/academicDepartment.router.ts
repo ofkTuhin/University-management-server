@@ -8,9 +8,9 @@ const router = express.Router()
 router.post(
   '/create-department',
   zodValidationHandler(
-    AcademicDepartmentZodValidation.createAcademicDepartmentZodValidation
+    AcademicDepartmentZodValidation.createAcademicDepartmentZodValidation,
   ),
-  academicDepartmentController.createaDepartment
+  academicDepartmentController.createaDepartment,
 )
 
 // get all Department
@@ -19,20 +19,20 @@ router.get('/all-departments', academicDepartmentController.getAllDepartments)
 // get single Department
 router.get(
   '/single-department/:id',
-  academicDepartmentController.getSingleDepartment
+  academicDepartmentController.getSingleDepartment,
 )
 
 // update Department
 router.patch(
   '/update-department/:id',
   zodValidationHandler(
-    AcademicDepartmentZodValidation.updateAcademicDepartmentZodValidation
+    AcademicDepartmentZodValidation.updateAcademicDepartmentZodValidation,
   ),
-  academicDepartmentController.updateDepartment
+  academicDepartmentController.updateDepartment,
 )
 // delete Department
 router.delete(
   '/delete-department/:id',
-  academicDepartmentController.deleteDepartment
+  academicDepartmentController.deleteDepartment,
 )
 export const departmentRouter = router

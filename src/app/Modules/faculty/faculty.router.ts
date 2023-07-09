@@ -10,6 +10,6 @@ router.delete('/:id', facultyController.deleteFaculty)
 router.patch(
   '/:id',
   zodValidationHandler(FacultyValidaion.updateFacultyZodSchema),
-  facultyController.updateFaculty
+  facultyController.updateFaculty,
 )
 export const facultyRouter = router

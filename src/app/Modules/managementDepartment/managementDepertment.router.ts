@@ -8,9 +8,9 @@ const router = express.Router()
 router.post(
   '/create-management',
   zodValidationHandler(
-    ManagementDepartmentZodValidation.createManagementDepartmentZodValidation
+    ManagementDepartmentZodValidation.createManagementDepartmentZodValidation,
   ),
-  managementDepartmentController.createaDepartment
+  managementDepartmentController.createaDepartment,
 )
 
 // get all Department
@@ -23,9 +23,9 @@ router.get('/:id', managementDepartmentController.getSingleDepartment)
 router.patch(
   '/:id',
   zodValidationHandler(
-    ManagementDepartmentZodValidation.updateManagementDepartmentZodValidation
+    ManagementDepartmentZodValidation.updateManagementDepartmentZodValidation,
   ),
-  managementDepartmentController.updateDepartment
+  managementDepartmentController.updateDepartment,
 )
 // delete Department
 router.delete('/:id', managementDepartmentController.deleteDepartment)

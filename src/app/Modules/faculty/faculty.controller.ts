@@ -14,7 +14,7 @@ const getAllFacultys = catchAsync(async (req: Request, res: Response) => {
   const filters = pick(req.query, facultyFilterableFields)
   const allFacultys = await FacultyService.getAllFacultys(
     paginationoptions,
-    filters
+    filters,
   )
 
   sendResponse<IFaculty[]>(res, {

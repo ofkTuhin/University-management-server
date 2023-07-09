@@ -53,7 +53,7 @@ const updateAcademicSemesterZodValidation = z
     data =>
       (data.body.code && data.body.title) ||
       (!data.body.title && !data.body.code),
-    { message: 'Semester data is required' }
+    { message: 'Semester data is required' },
   )
 
 export const AcademicSemesterZodValidation = {

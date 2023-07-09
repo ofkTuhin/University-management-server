@@ -10,7 +10,7 @@ import { AcademicSemesterService } from './academicSemester.service'
 const createaSemester = catchAsync(async (req: Request, res: Response) => {
   const { ...acdemicSemesterData } = req.body
   const academicSemester = await AcademicSemesterService.createAcademicSemester(
-    acdemicSemesterData
+    acdemicSemesterData,
   )
 
   sendResponse<IAcademicSemester>(res, {
@@ -25,7 +25,7 @@ const getAllSemesters = catchAsync(async (req: Request, res: Response) => {
   const filters = pick(req.query, ['searchTerm', 'title', 'code', 'year'])
   const allSemesters = await AcademicSemesterService.getAllSemesters(
     paginationoptions,
-    filters
+    filters,
   )
 
   sendResponse<IAcademicSemester[]>(res, {

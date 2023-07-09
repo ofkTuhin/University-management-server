@@ -23,7 +23,7 @@ const academicDepartmentSchema = new Schema<IAcademicDepartment>(
     toJSON: {
       virtuals: true,
     },
-  }
+  },
 )
 
 export const AcademicDepartment = model<

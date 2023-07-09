@@ -34,7 +34,7 @@ const userSchema = new Schema<UserSchema>(
     toJSON: {
       virtuals: true,
     },
-  }
+  },
 )
 
 export const User = model<UserSchema, UserModel>('User', userSchema)
