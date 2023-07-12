@@ -6,24 +6,84 @@
   "auditLog": "D:\\level-2\\project\\university-management-server\\logs\\error\\.d85f4f045d63567a76b7ef84489b428152f5488b-audit.json",
   "files": [
     {
-      "date": 1687090129757,
-      "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-06-18-18.log",
-      "hash": "4dc582f8d7f0b87fc5cba2612141ef2b8a19c4bc8d03ee4d85c9209ea329e67e"
+      "date": 1687709689482,
+      "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-06-25-22.log",
+      "hash": "d5648da96abd5eef32f8e0990f5d23a0969c7b2b4b81b92358e82892ea930092"
     },
     {
-      "date": 1687107565563,
-      "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-06-18-22.log",
-      "hash": "d04b73cb87a5c93775f5c29b5213850dfd17f62decf47210d9ecb9578a03f8c6"
+      "date": 1688127944633,
+      "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-06-30-18.log",
+      "hash": "e67d09331aa2c11e37f3a8f0ba5c1005eca6fdd5e60ba0d9056102386416a646"
     },
     {
-      "date": 1687107607967,
-      "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-06-18-23.log",
-      "hash": "25a62352a0d2cef2fc342b96f49bebeae43a8ea84b899216492d9ef1553100e3"
+      "date": 1688133013708,
+      "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-06-30-19.log",
+      "hash": "1666a761e3d2e169cf086af734cac598bc39058a8f117aa9c8f17eff50c128dd"
     },
     {
-      "date": 1687111364265,
-      "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-06-19-00.log",
-      "hash": "b3342d72b72f3de58ce549d55596634cbdb2493c81010dac0047280ba80131b7"
+      "date": 1688133700456,
+      "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-06-30-20.log",
+      "hash": "4e1af2fd6552370ed60966ad7619900d7cc4abb997ea08071c6407ba0bdb11c3"
+    },
+    {
+      "date": 1688144665744,
+      "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-06-30-23.log",
+      "hash": "f7404f41846a7bfe20a0d6cb4f0ae4c1a7e30948b0e9e010a4ea3bce5b3a3a22"
+    },
+    {
+      "date": 1688168519402,
+      "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-07-01-05.log",
+      "hash": "48d18642cefdc3082712e242cfc99cb9c352044c8a8d591d8e13795a768fde40"
+    },
+    {
+      "date": 1688169612342,
+      "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-07-01-06.log",
+      "hash": "cafb6eec56fffddedb362096a1e089b3d79127353a34f98ac08c0ecce720d7d6"
+    },
+    {
+      "date": 1688173252082,
+      "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-07-01-07.log",
+      "hash": "5a1b314e2b21656efccc7df648b33df78152cc9865dc1282bfd3429ecff0b59e"
+    },
+    {
+      "date": 1688181224392,
+      "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-07-01-09.log",
+      "hash": "b9091d3f7d1672fa348ed8bdc847656f23e86cb2bfa5efdb99bd5e555732a159"
+    },
+    {
+      "date": 1688708864556,
+      "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-07-07-11.log",
+      "hash": "ae3f92016b87d28290ef5110508fcfcb3cbd44b9d5b7ae87bb47736ea93325bc"
+    },
+    {
+      "date": 1688710104576,
+      "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-07-07-12.log",
+      "hash": "38f20b56ab7010e48026a54b2afde490097f1f108e37619f655ca19249001776"
+    },
+    {
+      "date": 1688753022889,
+      "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-07-08-00.log",
+      "hash": "923c3d0784131a927bd1951176b09b16a37c307e65076bdeb5745255f1d1d731"
+    },
+    {
+      "date": 1688834445849,
+      "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-07-08-22.log",
+      "hash": "edefdff10c2d1f5d87723dbeeaf10e15535cd6a6448a4c0b691fe5f0c78bc9d7"
+    },
+    {
+      "date": 1688837452255,
+      "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-07-08-23.log",
+      "hash": "27d0ea655d0d30ab1557852cdcf02a4d071d062846fea52a9cdfe48fd9cd2fbd"
+    },
+    {
+      "date": 1688910442712,
+      "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-07-09-19.log",
+      "hash": "2530234f2b50f7d23e0f9a4d736ea78f9e5f4a9a15b93cd8f7c46db928a97ce2"
+    },
+    {
+      "date": 1688911235328,
+      "name": "D:\\level-2\\project\\university-management-server\\logs\\error\\ums-error-2023-07-09-20.log",
+      "hash": "3c63f90d28a9495355660aee090cc72893eacd27ef44ea659b5042ec8775b7da"
     }
   ],
   "hashType": "sha256"

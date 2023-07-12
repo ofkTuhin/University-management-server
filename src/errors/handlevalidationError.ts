@@ -5,7 +5,7 @@ import {
 } from '../app/types/interface'
 
 export const handleValidationErrors = (
-  error: mongoose.Error.ValidationError
+  error: mongoose.Error.ValidationError,
 ): GenericErrorResponse => {
   const errors: GenericErrorMessage[] = Object.keys(error.errors).map(
     (el: string) => {
@@ -13,12 +13,12 @@ export const handleValidationErrors = (
         path: error.errors[el].path,
         message: error.errors[el].message,
       }
-    }
+    },
   )
   const statusCode = 500
   return {
     message: 'Validation Error',
-    errormessage: errors,
+    errormessages: errors,
     statusCode: statusCode,
   }
 }

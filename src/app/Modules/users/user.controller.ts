@@ -1,22 +1,48 @@
-import { NextFunction, Request, Response } from 'express'
-import { createUser } from './user.service'
+/* eslint-disable no-console */
+import { Request, Response } from 'express'
+import catchAsync from '../../../share/catchAsync'
+import { sendResponse } from '../../../share/sendResponse'
+import { UserService } from './user.service'
 
-const createaUserController = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  const userData = req.body
-  try {
-    await createUser(userData)
-    res.status(200).json({
-      message: 'User created successfully',
+const createaUserController = catchAsync(
+  async (req: Request, res: Response) => {
+    const { student, ...userData } = req.body
+
+    const user = await UserService.createStudent(userData, student)
+    sendResponse(res, {
+      success: true,
+      message: 'user created successfully',
+      result: user,
     })
-  } catch (error) {
-    next(error)
-  }
-}
+  },
+)
+const createaFacultyController = catchAsync(
+  async (req: Request, res: Response) => {
+    const { faculty, ...userData } = req.body
 
+    const user = await UserService.createFaculty(userData, faculty)
+    sendResponse(res, {
+      success: true,
+      message: 'user created successfully',
+      result: user,
+    })
+  },
+)
+// admin controller
+const createaAdminController = catchAsync(
+  async (req: Request, res: Response) => {
+    const { admin, ...userData } = req.body
+
+    const user = await UserService.createAdmin(userData, admin)
+    sendResponse(res, {
+      success: true,
+      message: 'user created successfully',
+      result: user,
+    })
+  },
+)
 export default {
   createaUserController,
+  createaFacultyController,
+  createaAdminController,
 }

@@ -1,0 +1,18 @@
+{
+  ok: 0,
+  code: 251,
+  codeName: 'NoSuchTransaction',
+  '$clusterTime': {
+    clusterTime: new Timestamp({ t: 1688911366, i: 15 }),
+    signature: {
+      hash: Binary.createFromBase64("zpoD1ZJVMutdaKPK7ytUGb7AfBU=", 0),
+      keyId: new Long("7200493829722472477")
+    }
+  },
+  operationTime: new Timestamp({ t: 1688911366, i: 14 }),
+  level: 'error',
+  service: 'user-service',
+  label: 'right meow!',
+  timestamp: '2023-07-09T14:00:49.674Z',
+  [Symbol(errorLabels)]: Set(1) { 'TransientTransactionError' }
+}

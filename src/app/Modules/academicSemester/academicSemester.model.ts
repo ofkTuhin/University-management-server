@@ -5,10 +5,10 @@ import {
   academicSemesterCode,
   academicSemesterMonths,
   academicSemesterTitle,
-} from './academicSemester.conatant'
-import { IAcademiSemester, IAcademicModel } from './academicSemester.interface'
+} from './academicSemester.constant'
+import { IAcademicModel, IAcademicSemester } from './academicSemester.interface'
 
-const academicSemesterSchema = new Schema<IAcademiSemester>(
+const academicSemesterSchema = new Schema<IAcademicSemester>(
   {
     title: {
       type: String,
@@ -38,7 +38,7 @@ const academicSemesterSchema = new Schema<IAcademiSemester>(
   },
   {
     timestamps: true,
-  }
+  },
 )
 academicSemesterSchema.pre('save', async function (next) {
   const isExist = await AcademicSemester.findOne({
@@ -51,7 +51,7 @@ academicSemesterSchema.pre('save', async function (next) {
 
   next()
 })
-export const AcademicSemester = model<IAcademiSemester, IAcademicModel>(
+export const AcademicSemester = model<IAcademicSemester, IAcademicModel>(
   'AcademicSemester',
-  academicSemesterSchema
+  academicSemesterSchema,
 )

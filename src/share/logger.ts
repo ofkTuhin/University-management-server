@@ -17,7 +17,7 @@ const successlog = createLogger({
     label({ label: 'right meow!' }),
     timestamp(),
     myFormat,
-    prettyPrint()
+    prettyPrint(),
   ),
   defaultMeta: { service: 'user-service' },
   transports: [
@@ -26,7 +26,7 @@ const successlog = createLogger({
         process.cwd(),
         'logs',
         'success',
-        'ums-success-%DATE%.log'
+        'ums-success-%DATE%.log',
       ),
       datePattern: 'YYYY-MM-DD-HH',
       zippedArchive: true,
@@ -43,18 +43,16 @@ const errorlog = createLogger({
     label({ label: 'right meow!' }),
     timestamp(),
     myFormat,
-    prettyPrint()
+    prettyPrint(),
   ),
   defaultMeta: { service: 'user-service' },
   transports: [
-    // eslint-disable-next-line no-undef
-
     new DailyRotateFile({
       filename: path.join(
         process.cwd(),
         'logs',
         'error',
-        'ums-error-%DATE%.log'
+        'ums-error-%DATE%.log',
       ),
       datePattern: 'YYYY-MM-DD-HH',
       zippedArchive: true,

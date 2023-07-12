@@ -6,8 +6,8 @@ export type IApiResponse<T> = {
   message?: string | null
   result?: T | null
   meta?: {
-    page: number
-    limit: number
+    page: number | null
+    limit: number | null
     total: number
   }
 }
